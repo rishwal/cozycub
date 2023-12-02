@@ -1,0 +1,84 @@
+#parent-div {
+  background-color:  #F2F3F5;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#parent-div .item-container {
+  border-radius: 24px;
+  height: auto;
+}
+.item-container .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.shop-card:hover{
+  transform: scale(1.05);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;  
+}
+.filter-container {
+  background-color: rgba(255, 255, 255, 0.668);
+  border-radius: 24px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+}
+.row .card {
+  height: 18rem;
+  cursor: pointer;
+
+  height: auto;
+}
+.row .shop-card-img {
+  margin-top: 15px;
+  height: 150px;
+}
+.shop-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shop-card-text {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+@media screen and (min-width: 390px) {
+}
+
+/* Media query for small screens */
+@media screen and (min-width: 576px) {
+  .row .card {
+    height: 25rem;
+  }
+
+  .row .shop-card-img {
+    height: 250px;
+  }
+  .shop-card-text {
+    margin-top: 15px;
+    justify-content: space-evenly;
+  }
+}
+
+/* Media query for medium screens */
+@media screen and (min-width: 768px) {
+}
+.cardtext {
+  display: unset;
+}
+/* Media query for large screens */
+@media screen and (min-width: 992px) {
+}
+
+/* Media query for extra-large screens */
+@media screen and (min-width: 1200px) {
+}

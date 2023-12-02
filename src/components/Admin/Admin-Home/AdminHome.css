@@ -1,0 +1,56 @@
+#admin-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: #EAECF0;
+;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.search-users {
+  margin-top: 100px;
+  width: 50%;
+}
+.list-items:hover{
+    background-color: rgba(255, 255, 255, 0.885);
+}
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.home .list {
+  margin-top: 60px;
+  width: 80%;
+}
+.list-items{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    height: 8vh;
+}
+/* Media query for small screens */
+@media screen and (min-width: 576px) {
+
+  
+}
+
+/* Media query for medium screens */
+@media screen and (min-width: 768px) {
+
+}
+
+/* Media query for large screens */
+@media screen and (min-width: 992px) {
+
+}
+
+/* Media query for extra-large screens */
+@media screen and (min-width: 1200px) {
+  /* Add styles for extra-large screens if needed */
+}

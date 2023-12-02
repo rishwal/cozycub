@@ -1,0 +1,24 @@
+#payment-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#payment-container .container .form .row{
+    margin-top: 100PX;
+}
+
+.form {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%
+   
+}
+
+.form .input{
+    height: 30px;
+}

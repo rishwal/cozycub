@@ -1,0 +1,14 @@
+#createProduct{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.create-product-container{
+
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
