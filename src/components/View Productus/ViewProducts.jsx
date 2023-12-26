@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { dataContext } from '../Data/Data-object/Data';
 import Modal from 'react-bootstrap/Modal';
 import { FaStar } from "react-icons/fa";
-import { FaStarHalfAlt } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa";
 
 
 
@@ -54,6 +54,28 @@ const ViewProductus = () => {
 
     }
 
+    const starfill=<FaStar style={{color:'orange',marginRight:'2px'}} />;
+    const star= <FaRegStar style={{color:'orange',marginRight:'2px'}}/>;
+  const iconArr = [
+     starfill,
+     starfill,
+     starfill,
+     starfill,
+     starfill,
+     star,
+     star,
+     star,
+     star,
+     star,
+  ];
+
+  const printRating = (rating) => {
+    const ratingArr = iconArr
+      .slice(0, rating)
+      .concat(iconArr.slice(5, 10 - rating));
+    return ratingArr.map((starts) => starts);
+  };
+
 
     return (
         <section id='main'>
@@ -75,17 +97,7 @@ const ViewProductus = () => {
 
                             <h2>{dataNow.name}</h2>
 
-                            <FaStar style={{color:'orange',marginRight:'2px'}} />
-                            <FaStar style={{color:'orange',marginRight:'2px'}} />
-                            <FaStar style={{color:'orange',marginRight:'2px'}} />
-                            <FaStar style={{color:'orange',marginRight:'2px'}} />
-                            <FaStarHalfAlt style={{color:'orange',marginRight:'2px'}}/>
-
-
-
-                
-
-
+                            {printRating(dataNow.rating)}
                             <h2 className='price'>₹{dataNow.offerprice}<span style={{ marginLeft: '10px' }}>₹{dataNow.price}</span></h2>
 
                             <h3>{dataNow.description}</h3>

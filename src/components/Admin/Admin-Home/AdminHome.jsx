@@ -3,7 +3,6 @@ import { dataContext } from '../../Data/Data-object/Data';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './AdminHome.css'
 import { useNavigate } from 'react-router-dom';
-import rishwal from '../../Data/images/rishwaltp.jpeg';
 import Badge from 'react-bootstrap/Badge';
 
 const Admin = () => {

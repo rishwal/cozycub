@@ -18,6 +18,7 @@ import AdminNavbar from './components/Admin/Admin-Nav/AdminNavbar';
 import Products from './components/Admin/Products/Products'
 import Updateproduct from './components/Admin/Products/Updateproduct';
 import CreateProduct from './components/Admin/Add Product/CreateProduct';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path='/product'>
               <Route path=':id' element={<ViewProductus />}></Route>
             </Route>
+
             <Route path='buy' element={<BuyNow />}></Route>
             <Route path='/search' element={<Search />}></Route>
             <Route path='/login' element={<Auth />}></Route>
@@ -73,7 +75,10 @@ function App() {
 
           </Routes>
 
+          
+            <Footer/>
         </BrowserRouter>
+
 
       </div>
     </Data>

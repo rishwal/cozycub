@@ -6,9 +6,11 @@
   flex-direction: column;
   justify-content: center;
   height: auto;
+  
 }
 #container .row{
     display: flex;
+    width: 100%;
 
 }
 .product-card:hover{

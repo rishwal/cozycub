@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+#home-container {
+  min-height: auto;
+}
 #products {
   margin-top: 10px;
   height: 140vh;
@@ -24,7 +27,6 @@
 .card-container {
   position: absolute;
   z-index: 1;
-  /* background-color: yellow; */
   width: 100%;
   height: 15vh;
   bottom: 45px;
@@ -43,10 +45,8 @@
   margin-left: 10px;
   background-color: rgba(255, 255, 255, 0.43) !important;
   cursor: pointer;
-  height: 100%
+  height: 100%;
 }
-
-
 
 .card-image {
   background-color: #f9f9f97b;
@@ -77,17 +77,23 @@
 
 .category {
   height: 50vh;
-  background-color: white;
+
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
+.scroll-list div:hover {
+  transform: scale(1.1);
+}
+
 .scroll-list {
-  background-color: white;
+  margin-top: 50px;
   display: flex;
   align-items: center;
+  min-height: 30vh;
+  margin-bottom: 80px;
   justify-content: space-between;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -97,10 +103,16 @@
 .scroll-list::-webkit-scrollbar {
   display: none;
 }
+.scrollbar-text {
+  font-size: 10px;
+}
 
 .scroll-list div img {
-  width: 90%;
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
 }
+
 .category {
   position: relative;
 }
@@ -135,6 +147,68 @@
   display: unset;
 }
 
+#home-poster {
+  display: flex;
+  justify-content: space-around;
+}
+
+#home-poster .home-poster-images {
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 40px;
+}
+
+#home-poster .poster-1 {
+  display: none;
+
+  background-image: url("./images/poster-1.jpg");
+}
+#home-poster .poster-1-mobile {
+  background-image: url("./images/poster-1-mobile.jpg");
+}
+#home-poster .poster-2 {
+  display: none;
+  background-image: url("./images/poster-2.jpg");
+}
+
+#home-poster .poster-2-mobile {
+  background-image: url("./images/discount-coupon.jpg");
+}
+
+#three-feature-container {
+  margin-top: 10vh;
+  padding: 20px;
+}
+#three-feature-container .three-features {
+  background-color: rgba(211, 211, 211, 0.645);
+  min-height: 250px;
+  padding: 30px;
+  margin-bottom: 15px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+#three-feature-container .three-features .feature-icons {
+  font-size: clamp(1rem, 3rem + 3.032vw, 4rem);
+  color: #72168b;
+}
+#three-feature-container .three-features h2 {
+  margin-top: 20px;
+}
+
+/* css animation for feature icons */
+
+#three-feature-container .feature-1:hover .icon-1 {
+  animation: delivery 2s linear 1;
+}
+
+#three-feature-container .feature-2:hover .icon-2 {
+  animation: trap 1.5s ease-in-out 1;
+}
+#three-feature-container .feature-3:hover .icon-3 {
+  animation: rotate-star .5s linear 1;
+}
 /***************************/
 /* media queries */
 
@@ -161,6 +235,22 @@
   #products .card-title {
     font-size: 2.5vh;
   }
+  #home-poster .poster-2-mobile {
+    display: none;
+  }
+  #home-poster .poster-2 {
+    display: unset;
+    margin-left: 0px;
+    margin-top: 183px;
+    transform: scale(1.2);
+  }
+  #home-poster .poster-1 {
+    display: unset;
+    transform: scale(1.2);
+  }
+  #home-poster .poster-1-mobile {
+    display: none;
+  }
 
   #products {
     margin-top: 10px;
@@ -168,15 +258,14 @@
   }
 
   .scroll-list {
-    height: 30vh;
+    height: 40vh;
   }
 
   .category img {
     height: 150px;
   }
-
-  .scroll-list div img {
-    width: 65%;
+  .scrollbar-text {
+    font-size: 14px;
   }
 }
 
@@ -205,6 +294,7 @@
   }
 
   .scroll-list div img {
+    height: 200px;
     width: 70%;
   }
 }
@@ -240,5 +330,170 @@
   }
   #products .card-title {
     font-size: 4vh;
+  }
+}
+
+.main-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .main-container {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.title {
+  color: #92989f;
+  letter-spacing: 0.3px;
+  font: 600 18px/133% Jost, sans-serif;
+}
+
+.service-list,
+.support-list,
+.company-list,
+.legal-list {
+  color: rgba(0, 0, 0, 0.85);
+  letter-spacing: 0.3px;
+  margin-top: 32px;
+  font: 400 16px/40px Jost, sans-serif;
+}
+
+.newsletter-content {
+  color: rgba(0, 0, 0, 0.85);
+  letter-spacing: 0.3px;
+  margin-top: 26px;
+  font: 400 16px/24px Jost, sans-serif;
+}
+
+.email {
+  display: flex;
+  margin-top: 34px;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.email-input {
+  color: #92989f;
+  letter-spacing: 0.3px;
+  border-radius: 8px;
+  border: 1px solid #b3bdc7;
+  background-color: #fff;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: start;
+  padding: 14px 60px 14px 15px;
+  font: 400 16px/150% Jost, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .email-input {
+    padding-right: 20px;
+  }
+}
+
+.subscribe {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  border-radius: 8px;
+  justify-content: center;
+  padding: 14px 26px;
+  font: 400 16px/150% Jost, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .subscribe {
+    white-space: initial;
+    padding: 0 20px;
+  }
+}
+
+@keyframes delivery {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(100%);
+  }
+  30% {
+    transform: translateX(200%);
+  }
+  40% {
+    transform: translateX(300%);
+  }
+  50% {
+    transform: translateX(350%);
+  }
+  60% {
+    transform: translateX(-350%);
+  }
+  70% {
+    transform: translateX(-300%);
+  }
+  80% {
+    transform: translateX(-200%);
+  }
+  90% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes trap {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(150%);
+  }
+  30% {
+    transform: translateX(300%);
+  }
+  40% {
+    transform: translateX(150%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  60% {
+    transform: translateX(-150%);
+  }
+  70% {
+    transform: translateX(-300%);
+  }
+  80% {
+    transform: translateX(-150%);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes rotate-star{
+  0%,
+  25%{
+   transform: rotate(90deg);
+  }
+  50%{
+   transform: rotate(180deg);
+  }
+  75%{
+   transform: rotate(270deg);
+  }
+  100%{
+   transform: rotate(360deg);
   }
 }

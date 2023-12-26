@@ -1,0 +1,54 @@
+:root {
+  --font-xl: 2em;
+}
+
+.footer {
+  padding: 20px;
+  
+ 
+}
+.main-container {
+  display: block;
+  padding: 30px 30px 30px 30px;
+  justify-content: space-between;
+  background-color: rgba(230, 227, 227, 0.473);
+}
+
+.main-container span {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.main-container .title{
+    text-align: left;
+    margin-top: 40px;
+}
+.main-container .newsletter{
+ display: block;
+ text-align: left;
+ 
+}
+
+.main-container .email{
+    display: block;
+    text-align: left;
+}
+
+.main-container .email-input {
+    margin-bottom: 10px;
+    height: 40px;
+  
+}
+.main-container .email button{
+    background-color: rgba(0, 0, 0, 0.801);
+}
+
+@media screen and (min-width:546px){
+    .main-container{
+        display: flex;
+    }
+    .main-container .email-input{
+        height: auto;
+        margin-right: 1em;
+    }
+}
