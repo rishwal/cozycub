@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cozycub/static/css/main.c1ab3ca6.css",
-    "main.js": "/cozycub/static/js/main.1539487d.js",
+    "main.css": "/cozycub/static/css/main.5cbdfa02.css",
+    "main.js": "/cozycub/static/js/main.ba17010f.js",
     "static/js/787.cb09421a.chunk.js": "/cozycub/static/js/787.cb09421a.chunk.js",
     "static/media/cozy-cub-2.jpg": "/cozycub/static/media/cozy-cub-2.cdc2f8fcd1ad7e777c6f.jpg",
     "static/media/Cozy Cub.png": "/cozycub/static/media/Cozy Cub.606e616e2e1b193ecc76.png",
@@ -9,18 +9,20 @@
     "static/media/8683985.jpg": "/cozycub/static/media/8683985.811d34a4be63d7ac049e.jpg",
     "static/media/pexels-pixabay-459976.jpg": "/cozycub/static/media/pexels-pixabay-459976.34e37cc37a2046ed1a00.jpg",
     "static/media/babifas.jpeg": "/cozycub/static/media/babifas.8348d28f87ae57754b18.jpeg",
-    "static/media/1-2-years-d-w-59-flora-original-imagnz8xhjxyzg8a.webp": "/cozycub/static/media/1-2-years-d-w-59-flora-original-imagnz8xhjxyzg8a.1de97e8932f965b113a6.webp",
     "static/media/cloth-girl-14.jpg": "/cozycub/static/media/cloth-girl-14.f59910ce51dc6b0aae0f.jpg",
     "static/media/rishwaltp.jpeg": "/cozycub/static/media/rishwaltp.d3f3c49571508d7c8233.jpeg",
+    "static/media/poster-2.jpg": "/cozycub/static/media/poster-2.af7a10e2cbaada01a3d7.jpg",
     "static/media/cloth-set-boy-7.jpg": "/cozycub/static/media/cloth-set-boy-7.d06e61ce995e465fdbde.jpg",
     "static/media/food-2.jpg": "/cozycub/static/media/food-2.50d7e28207f8d6de119f.jpg",
     "static/media/cloth-girl-4.jpg": "/cozycub/static/media/cloth-girl-4.69c3c011627cdf816bc4.jpg",
+    "static/media/poster-1.jpg": "/cozycub/static/media/poster-1.19ae11bfb1d2bfe4126f.jpg",
     "static/media/food-6.jpg": "/cozycub/static/media/food-6.b70e3e8cfaa3288bd76f.jpg",
     "static/media/cloth-girl-1.jpg": "/cozycub/static/media/cloth-girl-1.ef004c8108ae35928871.jpg",
     "static/media/shaan.jpeg": "/cozycub/static/media/shaan.585df6304d6d8b734106.jpeg",
     "static/media/toy-6.jpg": "/cozycub/static/media/toy-6.42a8afb1c8fb00abc2ae.jpg",
     "static/media/cloth-girl-2.jpg": "/cozycub/static/media/cloth-girl-2.5b3269a871ed6c12b28e.jpg",
     "static/media/cloth-girl-18.jpg": "/cozycub/static/media/cloth-girl-18.c164bc54903c692dd810.jpg",
+    "static/media/discount-coupon.jpg": "/cozycub/static/media/discount-coupon.a476df47f1e7b1acd973.jpg",
     "static/media/cloth-girl-12.jpg": "/cozycub/static/media/cloth-girl-12.42c6e53cc5a47c4e5464.jpg",
     "static/media/food-1.jpg": "/cozycub/static/media/food-1.9976984a4ce1cae649d5.jpg",
     "static/media/cloth-girl-9.jpg": "/cozycub/static/media/cloth-girl-9.76c2e33fda26a3046593.jpg",
@@ -42,6 +44,7 @@
     "static/media/cloth-girl-17.jpg": "/cozycub/static/media/cloth-girl-17.8b7a78fe918eac96d85d.jpg",
     "static/media/cloth-boy-10.jpg": "/cozycub/static/media/cloth-boy-10.bb52741996adb4b22a69.jpg",
     "static/media/cloth-girl-10.jpg": "/cozycub/static/media/cloth-girl-10.8f7e6b37d536c103d227.jpg",
+    "static/media/poster-1-mobile.jpg": "/cozycub/static/media/poster-1-mobile.8924286499820549a23e.jpg",
     "static/media/toy-4.jpg": "/cozycub/static/media/toy-4.c57a243195ed59453202.jpg",
     "static/media/cloth-boy-15.jpg": "/cozycub/static/media/cloth-boy-15.83bb11f99de7d7d1c4cd.jpg",
     "static/media/cloth-girl-11.jpg": "/cozycub/static/media/cloth-girl-11.ade2e8ad9da7e94b8ed9.jpg",
@@ -58,7 +61,6 @@
     "static/media/toy-7.jpg": "/cozycub/static/media/toy-7.13d9b4eb691d575d134c.jpg",
     "static/media/cloth-girl-15.jpg": "/cozycub/static/media/cloth-girl-15.e13d1501cc9ee91fb20d.jpg",
     "static/media/cloth-girl-20.jpg": "/cozycub/static/media/cloth-girl-20.93ef37157f9974daeeb8.jpg",
-    "static/media/51bljnQfxrL._SX679_.jpg": "/cozycub/static/media/51bljnQfxrL._SX679_.50478cb5f97ab6e32276.jpg",
     "static/media/cloth-boy-20.jpg": "/cozycub/static/media/cloth-boy-20.ab6af33be01a87bda87c.jpg",
     "static/media/food-3.jpg": "/cozycub/static/media/food-3.a6e495a2125c470bdb75.jpg",
     "static/media/toy-15.jpg": "/cozycub/static/media/toy-15.f2747b178b1c1f3ec016.jpg",
@@ -75,7 +77,6 @@
     "static/media/cloth-girl-7.jpg": "/cozycub/static/media/cloth-girl-7.55909956daec2ab2c86c.jpg",
     "static/media/cloth-set-boy-8.jpg": "/cozycub/static/media/cloth-set-boy-8.5759a3825a2bfe2b0187.jpg",
     "static/media/care-8.jpg": "/cozycub/static/media/care-8.a68a614224cf7981acb9.jpg",
-    "static/media/3-6-months-bb-mus-frk23-candy-the-boo-boo-club-original-imagrvmggzzvzy7f.webp": "/cozycub/static/media/3-6-months-bb-mus-frk23-candy-the-boo-boo-club-original-imagrvmggzzvzy7f.bd785d4acb9397e83f63.webp",
     "static/media/food-8.jpg": "/cozycub/static/media/food-8.08a86fc38355e5fa02a5.jpg",
     "static/media/toy-13.jpg": "/cozycub/static/media/toy-13.4ec47ae364783503548c.jpg",
     "static/media/toy-17.jpg": "/cozycub/static/media/toy-17.ee18ea62c163e52b3e26.jpg",
@@ -89,12 +90,12 @@
     "static/media/cloth-boy-12.webp": "/cozycub/static/media/cloth-boy-12.be36d2c973f961505121.webp",
     "static/media/cloth-boy-11.webp": "/cozycub/static/media/cloth-boy-11.272c65ad3c74d09e22ce.webp",
     "index.html": "/cozycub/index.html",
-    "main.c1ab3ca6.css.map": "/cozycub/static/css/main.c1ab3ca6.css.map",
-    "main.1539487d.js.map": "/cozycub/static/js/main.1539487d.js.map",
+    "main.5cbdfa02.css.map": "/cozycub/static/css/main.5cbdfa02.css.map",
+    "main.ba17010f.js.map": "/cozycub/static/js/main.ba17010f.js.map",
     "787.cb09421a.chunk.js.map": "/cozycub/static/js/787.cb09421a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1ab3ca6.css",
-    "static/js/main.1539487d.js"
+    "static/css/main.5cbdfa02.css",
+    "static/js/main.ba17010f.js"
   ]
 }
