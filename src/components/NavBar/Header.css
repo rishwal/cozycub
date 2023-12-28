@@ -23,6 +23,14 @@
   cursor: pointer;
 }
 
+#nav-search-bar{
+  width:120px;
+  min-height:2.1em;
+  outline: none;
+  border:1px solid lightgrey;
+  box-shadow:rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
 @media screen and (min-width: 390px) {
   .search-form{
     display: none !important;

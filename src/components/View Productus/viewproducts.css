@@ -1,22 +1,20 @@
 #main {
-  height: auto;
-  width: 100vw;
-  height:100vh;
+  min-height: 100vh;
   background-color: #f1f3f6;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-
 #main .container {
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 80%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
   border-radius: 14px;
+  align-items: center;
+  justify-content: center;
 }
 #main .container .row {
   height: 100%;
@@ -26,10 +24,9 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-
 }
 #main .container .img-column .card .card-image {
-  height: 80%;
+  height: 100%;
 }
 
 #main .container .img-column .card #product-card-body {
@@ -42,7 +39,7 @@
   background-color: white;
 }
 #main .card {
-  height: 70%; 
+  height: 70%;
 }
 
 #main .text-column {
@@ -50,6 +47,7 @@
 
   flex-direction: column;
   justify-content: center;
+  
 }
 #main .text-column div {
   height: 70%;
@@ -57,19 +55,17 @@
   text-align: left;
   display: inline-block;
   height: auto;
- 
 }
-.text-column-container h2{
+.text-column-container h2 {
   margin-top: 100px;
 }
 
-.text-column-container .price{
+.text-column-container .price {
   margin-top: 30px;
 }
 
 #main .text-column div .price {
   color: green;
- 
 }
 #main .text-column div .price span {
   font-size: 20px;
@@ -83,25 +79,38 @@
   text-align: justify;
 }
 
+#product-card-body .product-btns {
+  background-color: #a74bfd;
+  border: none;
+}
+#product-card-body .product-btns:hover {
+  background-color: #a32cc4;
+}
+
+.text-column .wishlist-icon{
+ position: absolute;
+}
+
 @media screen and (min-width: 576px) {
   #main .container .img-column .card #product-card-body {
     position: static;
   }
   #main .container .img-column {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-
   }
-  
-#main .text-column div h2 {
-  margin-top: 20px;
-}
+
+  #main .text-column div h2 {
+    margin-top: 20px;
+  }
 }
 /* Media query for medium screens */
 @media screen and (min-width: 768px) {
+  #main .container{
+    min-height: 80vh;
+  }
 }
 
 /* Media query for large screens */

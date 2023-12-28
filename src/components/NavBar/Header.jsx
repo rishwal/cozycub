@@ -118,16 +118,8 @@ const Header = () => {
               <></>
             ) : (
               <>
-                {" "}
-                {/* <Form.Control
-                  type="search"
-                  placeholder="Search"
-                  className=""
-                  aria-label="Search"
-                  style={{ alignSItems: "flex-start", width: "130px" }}
-                  ref={searchText}
-                /> */}
-                <input type="text" style={{width:"120px" ,minHeight:"32.3px",outline:'none',border:'1px solid lightgrey',boxShadow:"rgba(149, 157, 165, 0.2) 0px 8px 24px;" }}  ref={searchText}   placeholder="Search"/>
+                
+                <input type="text" id="nav-search-bar"  ref={searchText}   placeholder="Search"/>
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
                   className="search-icon"

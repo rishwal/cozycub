@@ -200,14 +200,15 @@
 /* css animation for feature icons */
 
 #three-feature-container .feature-1:hover .icon-1 {
-  animation: delivery 2s linear 1;
+  animation: delivery 1s linear 1;
 }
 
 #three-feature-container .feature-2:hover .icon-2 {
-  animation: trap 1.5s ease-in-out 1;
+  transform: scale(1.2);
+  transition: transform 0.2s;
 }
 #three-feature-container .feature-3:hover .icon-3 {
-  animation: rotate-star .5s linear 1;
+  animation: rotate-star 0.5s linear 1;
 }
 /***************************/
 /* media queries */
@@ -419,81 +420,33 @@
   0% {
     transform: translateX(0);
   }
-  20% {
+  25% {
     transform: translateX(100%);
   }
-  30% {
+  50% {
     transform: translateX(200%);
   }
-  40% {
+  75% {
     transform: translateX(300%);
   }
-  50% {
+  100% {
+   
     transform: translateX(350%);
   }
-  60% {
-    transform: translateX(-350%);
-  }
-  70% {
-    transform: translateX(-300%);
-  }
-  80% {
-    transform: translateX(-200%);
-  }
-  90% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
-@keyframes trap {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(150%);
-  }
-  30% {
-    transform: translateX(300%);
-  }
-  40% {
-    transform: translateX(150%);
+@keyframes rotate-star {
+  0%,
+  25% {
+    transform: rotateX(90deg);
   }
   50% {
-    transform: translateX(0%);
+    transform: rotateX(180deg);
   }
-  60% {
-    transform: translateX(-150%);
-  }
-  70% {
-    transform: translateX(-300%);
-  }
-  80% {
-    transform: translateX(-150%);
-  }
-  90% {
-    transform: translateX(0);
+  75% {
+    transform: rotate(270deg);
   }
   100% {
-    transform: translateX(0);
-  }
-}
-
-
-@keyframes rotate-star{
-  0%,
-  25%{
-   transform: rotate(90deg);
-  }
-  50%{
-   transform: rotate(180deg);
-  }
-  75%{
-   transform: rotate(270deg);
-  }
-  100%{
-   transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

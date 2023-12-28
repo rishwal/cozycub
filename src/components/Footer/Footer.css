@@ -2,10 +2,8 @@
   --font-xl: 2em;
 }
 
-.footer {
+#footer {
   padding: 20px;
-  
- 
 }
 .main-container {
   display: block;
@@ -15,40 +13,38 @@
 }
 
 .main-container span {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.main-container .title{
-    text-align: left;
-    margin-top: 40px;
+.main-container .title {
+  text-align: left;
+  margin-top: 40px;
 }
-.main-container .newsletter{
- display: block;
- text-align: left;
- 
+.main-container .newsletter {
+  display: block;
+  text-align: left;
 }
 
-.main-container .email{
-    display: block;
-    text-align: left;
+.main-container .email {
+  display: block;
+  text-align: left;
 }
 
 .main-container .email-input {
-    margin-bottom: 10px;
-    height: 40px;
-  
+  margin-bottom: 10px;
+  height: 40px;
 }
-.main-container .email button{
-    background-color: rgba(0, 0, 0, 0.801);
+.main-container .email button {
+  background-color: rgba(0, 0, 0, 0.801);
 }
 
-@media screen and (min-width:546px){
-    .main-container{
-        display: flex;
-    }
-    .main-container .email-input{
-        height: auto;
-        margin-right: 1em;
-    }
+@media screen and (min-width: 546px) {
+  .main-container {
+    display: flex;
+  }
+  .main-container .email-input {
+    height: auto;
+    margin-right: 1em;
+  }
 }

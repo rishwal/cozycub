@@ -259,7 +259,7 @@ const Home = () => {
 
       <section id="home-poster">
         <div className="container">
-          <div className="row " style={{ padding: "10px" }}>
+          <div className="row " style={{ padding: "20px" }}>
             <div className="home-poster-images poster-1 col-12 col-md-6"></div>
             <div className="home-poster-images  poster-1-mobile col-12 col-md-6"></div>
             <div className="home-poster-images poster-2 col-12 col-md-6"></div>

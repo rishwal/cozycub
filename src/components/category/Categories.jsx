@@ -53,7 +53,7 @@ const Categories = () => {
   return (
     <div className="container" id="container" style={{ alignItems: "center" }}>
       <h1 style={{ fontFamily: "cursive", paddingTop: "10vh" }}>
-        {data?.category}
+        {type.slice(0, 1).toUpperCase() + type.slice(1)}
       </h1>
       <br />
       <div className="row " style={{ justifyContent: "start" }}>
