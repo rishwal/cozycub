@@ -15,6 +15,7 @@
   border-radius: 14px;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 #main .container .row {
   height: 100%;
@@ -47,7 +48,6 @@
 
   flex-direction: column;
   justify-content: center;
-  
 }
 #main .text-column div {
   height: 70%;
@@ -87,9 +87,21 @@
   background-color: #a32cc4;
 }
 
-.text-column .wishlist-icon{
- position: absolute;
+.text-column .wishlist-icon {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-size: 2em;
+  cursor: pointer;
+  color: rgb(43, 38, 38);
 }
+
+.text-column .fill {
+  display: none;
+  color: red;
+  transform: scale(1.2);
+}
+
 
 @media screen and (min-width: 576px) {
   #main .container .img-column .card #product-card-body {
@@ -108,7 +120,7 @@
 }
 /* Media query for medium screens */
 @media screen and (min-width: 768px) {
-  #main .container{
+  #main .container {
     min-height: 80vh;
   }
 }

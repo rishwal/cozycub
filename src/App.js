@@ -30,58 +30,58 @@ function App() {
     <Data>
       <div className="App">
         <Toaster />
-          <BrowserRouter basename='/cozycub'>
-            <Header />
+        <BrowserRouter basename='/cozycub'>
+          <Header />
 
-            <Routes>
+          <Routes>
 
-              <Route path='/' element={<Home />} ></Route>
-              <Route path='/cart' element={<Cart />}></Route>
-              <Route path='product-categories' element={<Categories />}>
-                <Route path=':type'>
-                </Route>
+            <Route path='/' element={<Home />} ></Route>
+            <Route path='/cart' element={<Cart />}></Route>
+            <Route path='product-categories' element={<Categories />}>
+              <Route path=':type'>
               </Route>
+            </Route>
 
-              <Route path='search/product' >
-                <Route path=':id' element={<ViewProductus />}></Route>
-              </Route>
+            <Route path='search/product' >
+              <Route path=':id' element={<ViewProductus />}></Route>
+            </Route>
 
-              <Route path='/product'>
-                <Route path=':id' element={<ViewProductus />}></Route>
-              </Route>
+            <Route path='/product'>
+              <Route path=':id' element={<ViewProductus />}></Route>
+            </Route>
 
-              <Route path='buy' element={<BuyNow />}></Route>
-              <Route path='/search' element={<Search />}></Route>
-              <Route path='/login' element={<Auth />}></Route>
-              <Route path='/shop' element={<Shop />}></Route>
-              <Route path='/payment' element={<Payment />}></Route>
+            <Route path='buy' element={<BuyNow />}></Route>
+            <Route path='/search' element={<Search />}></Route>
+            <Route path='/login' element={<Auth />}></Route>
+            <Route path='/shop' element={<Shop />}></Route>
+            <Route path='/payment' element={<Payment />}></Route>
 
-              <Route path='/admin/*' element={
-                <>
-                  <AdminNavbar />
-                  <Routes>
+            <Route path='/admin/*' element={
+              <>
+                <AdminNavbar />
+                <Routes>
 
-                    <Route path='/' element={<Admin />}></Route>
-                    <Route path='/create-products' element={<CreateProduct />} />
-                    <Route path='/user-details'>
-                      <Route path=':id' element={<Userdetails />}></Route>
-                    </Route>
-                    <Route path='/products' element={<Products />}></Route>
-                    <Route path='/products/:id' element={<Updateproduct />}></Route>
+                  <Route path='/' element={<Admin />}></Route>
+                  <Route path='/create-products' element={<CreateProduct />} />
+                  <Route path='/user-details'>
+                    <Route path=':id' element={<Userdetails />}></Route>
+                  </Route>
+                  <Route path='/products' element={<Products />}></Route>
+                  <Route path='/products/:id' element={<Updateproduct />}></Route>
 
-                  </Routes>
+                </Routes>
 
-                </>
-              }></Route>
+              </>
+            }></Route>
 
-              <Route path='*' element={<PageNotFound />} ></Route>
+            <Route path='*' element={<PageNotFound />} ></Route>
 
-            </Routes>
+          </Routes>
 
 
-            <Footer />
-          </BrowserRouter>
-       
+          <Footer />
+        </BrowserRouter>
+
 
 
 

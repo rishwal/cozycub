@@ -1,6 +1,4 @@
 import React from "react";
-import { Row } from "react-bootstrap";
-import Col from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import {
   ExampleCarouselImage1,
@@ -15,6 +13,7 @@ import { dataContext } from "../Data/Data-object/Data";
 import { FaShippingFast } from "react-icons/fa";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { SiTrustpilot } from "react-icons/si";
+import img from "./images/Products/Clothes/Girl/3-6-months-bb-mus-frk23-candy-the-boo-boo-club-original-imagrvmggzzvzy7f.webp";
 
 const Home = () => {
   const { data, setData } = useContext(dataContext);
@@ -256,6 +255,47 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* <section id="featured-products"> */}
+        {/* <header> */}
+          {/* <h2>LatestToys Collections</h2> */}
+          {/* <div className="toys-category"> */}
+            {/* <button>SHOW ALL</button> */}
+            {/* <button>BABY TOYS</button> */}
+            {/* <button>ACCESSORIES</button> */}
+            {/* <button>SOFT TOYS</button> */}
+          {/* </div> */}
+        {/* </header> */}
+        {/* <div className="container-fluid "> */}
+          {/* <div className="row featured-product-list"> */}
+            {/* <div className="col-12 col-md-6 col-lg-3"> */}
+            {/* <Card style={{ width: "18rem" }} > */}
+                {/* <Card.Img variant="top" src={img} /> */}
+              {/* </Card> */}
+            {/* </div> */}
+            {/* <div className="col-12 col-md-6 col-lg-3"> */}
+              {/* <Card style={{ width: "18rem" }}> */}
+                {/* <Card.Img variant="top" src={img} /> */}
+              {/* </Card> */}
+            {/* </div> */}
+            {/* <div className="col-12 col-md-6 col-lg-3"> */}
+              {/* <Card style={{ width: "18rem" }}> */}
+                {/* <Card.Img variant="top" src={img} /> */}
+              {/* </Card> */}
+            {/* </div> */}
+            {/* <div className="col-12 col-md-6 col-lg-3"> */}
+              {/* <Card style={{ width: "18rem" }}> */}
+                {/* <Card.Img variant="top" src={img} /> */}
+              {/* </Card> */}
+            {/* </div> */}
+            {/* <div className="col-12 col-md-6 col-lg-3"> */}
+              {/* <Card style={{ width: "18rem" }}> */}
+                {/* <Card.Img variant="top" src={img} /> */}
+              {/* </Card> */}
+            {/* </div> */}
+          {/* </div> */}
+        {/* </div> */}
+      {/* </section> */}
 
       <section id="home-poster">
         <div className="container">

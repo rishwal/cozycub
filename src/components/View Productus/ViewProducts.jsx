@@ -7,10 +7,16 @@ import { dataContext } from "../Data/Data-object/Data";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { RiHeartAddFill } from "react-icons/ri";
+import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
+import { IoMdLogIn } from "react-icons/io";
 
 const ViewProductus = () => {
   const { data, cart, setCart, setBuynow, signedin } = useContext(dataContext);
+  //state for heart icon
+  const [heartIcon, setheartIcon] = useState({ display: "unset" });
+  const [heartIconFill, setheartIconFill] = useState({ display: "none" });
+
   const navigate = useNavigate();
 
   let { id } = useParams();
@@ -27,19 +33,29 @@ const ViewProductus = () => {
       if (cart.includes(dataNow)) {
         const item = cart.find((val) => val == dataNow);
         item.qty++;
-        toast("Item already present");
+        toast((t) => (
+          <span>
+            Custom and <b>bold</b>
+            <button onClick={() => toast.dismiss(t.id)}>Dismiss</button>
+          </span>
+        ));
       } else {
         setCart([...cart, dataNow]);
         toast.success("Item added to Cart !");
       }
+    } else {
+      toast.error(() => (
+        <span>
+          <b> Please Login </b>
+          <button
+            onClick={() => navigate("/login")}
+            style={{ backgroundColor: "transparent", border: "none" }}
+          >
+            <IoMdLogIn />
+          </button>
+        </span>
+      ));
     }
-
-    toast((t) => (
-      <span>
-        Custom and <b>bold</b>
-        <button onClick={() => navigate("/login")}>Login</button>
-      </span>
-    ));
   };
 
   const buyNow = (dataNow) => {
@@ -47,7 +63,7 @@ const ViewProductus = () => {
       navigate("/buy");
       setBuynow(dataNow);
     } else {
-      toast.success("Successfully toasted!");
+      toast.error("Please Login!");
     }
   };
 
@@ -71,6 +87,19 @@ const ViewProductus = () => {
       .slice(0, rating)
       .concat(iconArr.slice(5, 10 - rating));
     return ratingArr.map((starts) => starts);
+  };
+
+  //function to controll heart icon
+  const heartFill = () => {
+    if (heartIcon.display == "unset") {
+      setheartIcon({ display: "none" });
+      setheartIconFill({ display: "unset" });
+      toast.success(`${dataNow.name} added to wishlist`);
+    } else {
+      setheartIcon({ display: "unset" });
+      setheartIconFill({ display: "none" });
+      toast.success(`${dataNow.name} removed from wishlist`);
+    }
   };
 
   return (
@@ -110,7 +139,16 @@ const ViewProductus = () => {
             </Card>
           </div>
           <div className="col-12 col-md-6 col-lg-8 text-column">
-            <RiHeartAddFill className="wishlist-icon" />
+            <AiOutlineHeart
+              className="wishlist-icon"
+              onClick={heartFill}
+              style={heartIcon}
+            />
+            <AiFillHeart
+              className="wishlist-icon fill"
+              onClick={heartFill}
+              style={heartIconFill}
+            />
             <div className="text-column-container">
               <h2>{dataNow.name}</h2>
 

@@ -45,7 +45,7 @@
   margin-left: 10px;
   background-color: rgba(255, 255, 255, 0.43) !important;
   cursor: pointer;
-  height: 100%;
+  height: 80%;
 }
 
 .card-image {
@@ -119,18 +119,19 @@
 .category div:hover::after {
   display: unset;
 }
-.category #column1 h4 {
-  position: relative;
-  right: 8%;
-  bottom: 6%;
-  z-index: 9;
+
+
+/*Featured products styles*/
+.featured-product-list .card {
+  height: 18rem;
 }
-.category #column2 h4 {
-  position: relative;
-  right: 8%;
-  bottom: 6%;
-  z-index: 9;
+.toys-category
+{
+  padding: 42px;
 }
+
+
+
 .category #column3 h4 {
   position: relative;
   right: 8%;
@@ -158,6 +159,7 @@
   background-position: center;
   background-size: contain;
   margin-top: 40px;
+  width: 83vw;
 }
 
 #home-poster .poster-1 {
@@ -272,15 +274,16 @@
 
 /* Media query for medium screens */
 @media screen and (min-width: 768px) {
+  .category-card {
+    height: 80%;
+  }
   .card-container {
     bottom: 50px;
   }
   .description-text {
     display: unset;
   }
-  #carousel {
-    display: unset;
-  }
+
   #products .card-title {
     font-size: 3vh;
   }
@@ -331,6 +334,12 @@
   }
   #products .card-title {
     font-size: 4vh;
+  }
+  #carousel {
+    display: unset;
+  }
+  #home {
+    background: none;
   }
 }
 
@@ -430,7 +439,6 @@
     transform: translateX(300%);
   }
   100% {
-   
     transform: translateX(350%);
   }
 }
