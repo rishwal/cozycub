@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cozycub/static/css/main.5cbdfa02.css",
-    "main.js": "/cozycub/static/js/main.ba17010f.js",
+    "main.css": "/cozycub/static/css/main.54936746.css",
+    "main.js": "/cozycub/static/js/main.f76eb8f9.js",
     "static/js/787.cb09421a.chunk.js": "/cozycub/static/js/787.cb09421a.chunk.js",
     "static/media/cozy-cub-2.jpg": "/cozycub/static/media/cozy-cub-2.cdc2f8fcd1ad7e777c6f.jpg",
     "static/media/Cozy Cub.png": "/cozycub/static/media/Cozy Cub.606e616e2e1b193ecc76.png",
@@ -77,6 +77,7 @@
     "static/media/cloth-girl-7.jpg": "/cozycub/static/media/cloth-girl-7.55909956daec2ab2c86c.jpg",
     "static/media/cloth-set-boy-8.jpg": "/cozycub/static/media/cloth-set-boy-8.5759a3825a2bfe2b0187.jpg",
     "static/media/care-8.jpg": "/cozycub/static/media/care-8.a68a614224cf7981acb9.jpg",
+    "static/media/3-6-months-bb-mus-frk23-candy-the-boo-boo-club-original-imagrvmggzzvzy7f.webp": "/cozycub/static/media/3-6-months-bb-mus-frk23-candy-the-boo-boo-club-original-imagrvmggzzvzy7f.bd785d4acb9397e83f63.webp",
     "static/media/food-8.jpg": "/cozycub/static/media/food-8.08a86fc38355e5fa02a5.jpg",
     "static/media/toy-13.jpg": "/cozycub/static/media/toy-13.4ec47ae364783503548c.jpg",
     "static/media/toy-17.jpg": "/cozycub/static/media/toy-17.ee18ea62c163e52b3e26.jpg",
@@ -90,12 +91,12 @@
     "static/media/cloth-boy-12.webp": "/cozycub/static/media/cloth-boy-12.be36d2c973f961505121.webp",
     "static/media/cloth-boy-11.webp": "/cozycub/static/media/cloth-boy-11.272c65ad3c74d09e22ce.webp",
     "index.html": "/cozycub/index.html",
-    "main.5cbdfa02.css.map": "/cozycub/static/css/main.5cbdfa02.css.map",
-    "main.ba17010f.js.map": "/cozycub/static/js/main.ba17010f.js.map",
+    "main.54936746.css.map": "/cozycub/static/css/main.54936746.css.map",
+    "main.f76eb8f9.js.map": "/cozycub/static/js/main.f76eb8f9.js.map",
     "787.cb09421a.chunk.js.map": "/cozycub/static/js/787.cb09421a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5cbdfa02.css",
-    "static/js/main.ba17010f.js"
+    "static/css/main.54936746.css",
+    "static/js/main.f76eb8f9.js"
   ]
 }
