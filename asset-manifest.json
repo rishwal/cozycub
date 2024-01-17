@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cozycub/static/css/main.54936746.css",
-    "main.js": "/cozycub/static/js/main.f76eb8f9.js",
+    "main.css": "/cozycub/static/css/main.2b92fd27.css",
+    "main.js": "/cozycub/static/js/main.38c088c4.js",
     "static/js/787.cb09421a.chunk.js": "/cozycub/static/js/787.cb09421a.chunk.js",
     "static/media/cozy-cub-2.jpg": "/cozycub/static/media/cozy-cub-2.cdc2f8fcd1ad7e777c6f.jpg",
     "static/media/Cozy Cub.png": "/cozycub/static/media/Cozy Cub.606e616e2e1b193ecc76.png",
@@ -91,12 +91,12 @@
     "static/media/cloth-boy-12.webp": "/cozycub/static/media/cloth-boy-12.be36d2c973f961505121.webp",
     "static/media/cloth-boy-11.webp": "/cozycub/static/media/cloth-boy-11.272c65ad3c74d09e22ce.webp",
     "index.html": "/cozycub/index.html",
-    "main.54936746.css.map": "/cozycub/static/css/main.54936746.css.map",
-    "main.f76eb8f9.js.map": "/cozycub/static/js/main.f76eb8f9.js.map",
+    "main.2b92fd27.css.map": "/cozycub/static/css/main.2b92fd27.css.map",
+    "main.38c088c4.js.map": "/cozycub/static/js/main.38c088c4.js.map",
     "787.cb09421a.chunk.js.map": "/cozycub/static/js/787.cb09421a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54936746.css",
-    "static/js/main.f76eb8f9.js"
+    "static/css/main.2b92fd27.css",
+    "static/js/main.38c088c4.js"
   ]
 }
