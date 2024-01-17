@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from '../Data/Data-object/Data';
 import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const SignIn = ({ users, isActive, setisActive }) => {
 
@@ -37,10 +38,10 @@ const SignIn = ({ users, isActive, setisActive }) => {
                 }
 
             }
-            else window.alert("Check your username and password");
+            else toast.error("Check your username and password");
 
         } else {
-            alert("please fill up")
+           toast.error("please fill up");
         }
 
     }

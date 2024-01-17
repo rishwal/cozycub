@@ -2,6 +2,8 @@ import React, { useReducer, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
+import toast from 'react-hot-toast';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 const SignUp = ({ setusers, users }) => {
 
@@ -17,10 +19,12 @@ const SignUp = ({ setusers, users }) => {
     const handleSignup = () => {
         const validateName = (name) => {
             if (name == "") {
-                alert("Please fill in your name");
+                toast.error("Please fill in your name")
                 return false
             } else if (users.find(user => user.name === name.toLowerCase())) {
-                alert("user already exists")
+                toast('Sorry User Already exist', {
+                    icon: '👤',
+                  });
                 return false;
 
             } else return true;
@@ -29,7 +33,9 @@ const SignUp = ({ setusers, users }) => {
         const validateEmail = (email) => {
             const emailRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
             if (email == "" || emailRegExp.test(email) == false) {
-                window.alert("Enter valid email")
+                toast.error('Enter a valid Email', {
+                    icon: '✉️',
+                  });
                 return false
             }
             else {
@@ -39,14 +45,14 @@ const SignUp = ({ setusers, users }) => {
 
         const validatePass = (pass, confirmpass) => {
             if (pass == "") {
-                alert("Please fill in password field")
+                toast("Please fill in password field",{icon:'🔑'})
             }
             else if (pass.length < 8) {
-                alert("Password must contain 8 characters")
+                toast.error("Password must contain 8 characters")
                 return false;
             }
             else if (pass !== confirmpass) {
-                alert("passwords doesnt match")
+                toast("passwords doesnt match",{icon:'👎🏻'})
                 return false;
             }
             else {

@@ -383,7 +383,7 @@
 
 .email {
   display: flex;
-  margin-top: 34px;
+  /* margin-top: 34px; */
   justify-content: space-between;
   gap: 8px;
 }

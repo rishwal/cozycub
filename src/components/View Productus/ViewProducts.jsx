@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { IoMdLogIn } from "react-icons/io";
+import { TbShoppingCartShare } from "react-icons/tb";
+
 
 const ViewProductus = () => {
   const { data, cart, setCart, setBuynow, signedin } = useContext(dataContext);
@@ -35,8 +37,8 @@ const ViewProductus = () => {
         item.qty++;
         toast((t) => (
           <span>
-            Custom and <b>bold</b>
-            <button onClick={() => toast.dismiss(t.id)}>Dismiss</button>
+            Item count increased <b>+1</b>
+            <button onClick={() =>navigate('/cart')} style={{border:'none',backgroundColor:'transparent',fontSize:'20px'}}><TbShoppingCartShare /></button>
           </span>
         ));
       } else {
