@@ -1,7 +1,7 @@
 import React from 'react';
-import image from './Cozy Cub.png'
-import img2 from './cozy-cub-3.png'
-import img3 from './cozy-cub-2.jpg'
+import image from './banner-2.png'
+import img2 from './blue fun cute baby fashion banner lanscape.png'
+import img3 from './Blue and White Illustration Playful Diapers Baby Promotion Banner.png'
 
 export const ExampleCarouselImage1 = () => {
     return (

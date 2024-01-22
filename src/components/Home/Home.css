@@ -86,6 +86,7 @@
 }
 .scroll-list div:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 
 .scroll-list {
@@ -154,29 +155,32 @@
 }
 
 #home-poster .home-poster-images {
-  height: 60vh;
+ 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   margin-top: 40px;
-  width: 83vw;
+  width: 90%;
+  height: 50vh;
+
 }
 
 #home-poster .poster-1 {
   display: none;
 
-  background-image: url("./images/poster-1.jpg");
+  background-image: url("./images/Toys-banner.png");
 }
 #home-poster .poster-1-mobile {
-  background-image: url("./images/poster-1-mobile.jpg");
+  background-image: url("./images/Blue\ White\ Kids\ Baby\ Shop\ Poster.png");
+  width: -webkit-fill-available;
 }
 #home-poster .poster-2 {
   display: none;
-  background-image: url("./images/poster-2.jpg");
+  background-image: url("./images/Colorful\ Funny\ Toys\ Store\ Promotion\ Banner.png");
 }
 
 #home-poster .poster-2-mobile {
-  background-image: url("./images/discount-coupon.jpg");
+  background-image: url("./images/cloth-mobile.png");
 }
 
 #three-feature-container {
@@ -240,12 +244,14 @@
   }
   #home-poster .poster-2-mobile {
     display: none;
+    
   }
   #home-poster .poster-2 {
     display: unset;
     margin-left: 0px;
     margin-top: 183px;
-    transform: scale(1.2);
+    max-width: 100%;
+    
   }
   #home-poster .poster-1 {
     display: unset;

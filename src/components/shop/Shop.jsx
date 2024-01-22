@@ -59,6 +59,7 @@ const Shop = () => {
 
   return (
     <div id="parent-div">
+      <h1 className="shop-heading">Shop</h1>
       <div className="filter-container container">
         <Dropdown>
           <Dropdown.Toggle

@@ -13,7 +13,8 @@ import { dataContext } from "../Data/Data-object/Data";
 import { FaShippingFast } from "react-icons/fa";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { SiTrustpilot } from "react-icons/si";
-import img from "./images/Products/Clothes/Girl/3-6-months-bb-mus-frk23-candy-the-boo-boo-club-original-imagrvmggzzvzy7f.webp";
+import { CarouselItem } from "react-bootstrap";
+
 
 const Home = () => {
   const { data, setData } = useContext(dataContext);
@@ -31,6 +32,9 @@ const Home = () => {
         >
           <Carousel.Item className="first-item">
             <ExampleCarouselImage2 text="First slide" />
+            
+              <button style={{position:'absolute',zIndex:'1',backgroundColor:"red",width:"200px"}}>SHOP NOW</button>
+           
             <Carousel.Caption></Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
@@ -298,12 +302,12 @@ const Home = () => {
       {/* </section> */}
 
       <section id="home-poster">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row " style={{ padding: "20px" }}>
-            <div className="home-poster-images poster-1 col-12 col-md-6"></div>
-            <div className="home-poster-images  poster-1-mobile col-12 col-md-6"></div>
-            <div className="home-poster-images poster-2 col-12 col-md-6"></div>
-            <div className="home-poster-images  poster-2-mobile col-12 col-md-6"></div>
+            <div className="home-poster-images poster-1 col-12 col-md-6"onClick={()=>navigate('/product-categories/toys')}></div>
+            <div className="home-poster-images  poster-1-mobile col-12 col-md-6" onClick={()=>navigate('/product-categories/toys')}></div>
+            <div className="home-poster-images poster-2 col-12 col-md-6" onClick={()=>navigate('/product-categories/clothes')}></div>
+            <div className="home-poster-images  poster-2-mobile col-12 col-md-6" onClick={()=>navigate('/product-categories/clothes')}></div>
           </div>
         </div>
       </section>
@@ -311,7 +315,7 @@ const Home = () => {
       <div className="scroll-list ">
         {data.slice(2).map((data) => (
           <div className="col-4 col-md-4 col-lg-2" key={data.id}>
-            <img src={data.image} alt={data.name} />
+            <img src={data.image} alt={data.name} onClick={()=>navigate(`/product/${data.id}`)}/>
             <p
               style={{ marginTop: "20px", fontFamily: "cursive" }}
               className="scrollbar-text"
