@@ -101,6 +101,7 @@
   overflow-x: scroll;
   overflow-y: hidden;
 }
+
 .scroll-list::-webkit-scrollbar {
   display: none;
 }
@@ -110,8 +111,12 @@
 
 .scroll-list div img {
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
+  height: 140px;
+  width: 140px;
+}
+.scroll-list .scroll-items {
+  margin-left: 10px;
+  margin-right: 25px;
 }
 
 .category {
@@ -121,17 +126,13 @@
   display: unset;
 }
 
-
 /*Featured products styles*/
 .featured-product-list .card {
   height: 18rem;
 }
-.toys-category
-{
+.toys-category {
   padding: 42px;
 }
-
-
 
 .category #column3 h4 {
   position: relative;
@@ -151,18 +152,19 @@
 
 #home-poster {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 #home-poster .home-poster-images {
- 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   margin-top: 40px;
   width: 90%;
-  height: 50vh;
-
+  min-height: 75vh;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
 }
 
 #home-poster .poster-1 {
@@ -181,6 +183,7 @@
 
 #home-poster .poster-2-mobile {
   background-image: url("./images/cloth-mobile.png");
+  width: -webkit-fill-available;
 }
 
 #three-feature-container {
@@ -188,7 +191,7 @@
   padding: 20px;
 }
 #three-feature-container .three-features {
-  background-color: rgba(211, 211, 211, 0.645);
+  background-color: rgba(225, 225, 225, 0.633);
   min-height: 250px;
   padding: 30px;
   margin-bottom: 15px;
@@ -197,7 +200,7 @@
 }
 #three-feature-container .three-features .feature-icons {
   font-size: clamp(1rem, 3rem + 3.032vw, 4rem);
-  color: #72168b;
+  color: #9715ba;
 }
 #three-feature-container .three-features h2 {
   margin-top: 20px;
@@ -244,14 +247,12 @@
   }
   #home-poster .poster-2-mobile {
     display: none;
-    
   }
   #home-poster .poster-2 {
     display: unset;
-    margin-left: 0px;
+    /* margin-left: 0px; */
     margin-top: 183px;
-    max-width: 100%;
-    
+    transform: scale(1.2);
   }
   #home-poster .poster-1 {
     display: unset;
@@ -353,7 +354,10 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 20px;
+}
+#home-category .category {
+  max-width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 991px) {
