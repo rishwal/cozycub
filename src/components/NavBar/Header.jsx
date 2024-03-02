@@ -220,7 +220,7 @@ const Header = () => {
                 <>
                   <Dropdown.Menu style={{ backgroundColor: "white" }}>
                     <Dropdown.Item href="#/action-1" disabled>
-                      {currentuser.name}
+                      {currentuser?.name}
                     </Dropdown.Item>
                     <Dropdown.Item
                       href="#/action-2"

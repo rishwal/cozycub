@@ -39,180 +39,180 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
 
-        {/* <div className="card-container"> */}
-          {/* <Card */}
-            {/* style={{ */}
-              {/* bottom: "0px", */}
-              {/* display: "flex", */}
-              {/* flexDirection: "row", */}
-              {/* justifyContent: "flex-start", */}
-            {/* }} */}
-            {/* className="category-card " */}
-            {/* onClick={() => navigate("/product-categories/clothes")} */}
-          {/* > */}
-            {/* <div */}
-              {/* className="card-image" */}
-              {/* style={{ */}
-                {/* width: "40%", */}
-                {/* display: "flex", */}
-                {/* justifyContent: "center", */}
-                {/* alignItems: "center", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Img */}
-                {/* src={data[39].image} */}
-                {/* style={{ height: "80%", width: "75%" }} */}
-              {/* /> */}
-            {/* </div> */}
-            {/* <Card.Body */}
-              {/* style={{ */}
-                {/* display: "flex", */}
-                {/* flexDirection: "column", */}
-                {/* justifyContent: "start", */}
-                {/* alignItems: "start", */}
-                {/* width: "60%", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Title style={{ fontWeight: "600" }}>Clothes</Card.Title> */}
-              {/* <Card.Text style={{ textAlign: "left", fontSize: "12px" }}> */}
-                {/* Clothes for infants{" "} */}
-                {/* <span className="description-text"> */}
-                  {/* Cozycub where style meets comfort for your little one's */}
-                  {/* everyday moments. */}
-                {/* </span> */}
-              {/* </Card.Text> */}
-            {/* </Card.Body> */}
-          {/* </Card> */}
-          {/* <Card */}
-            {/* style={{ */}
-              {/* height: "100%", */}
-              {/* display: "flex", */}
-              {/* flexDirection: "row", */}
-              {/* justifyContent: "flex-start", */}
-            {/* }} */}
-            {/* className="category-card" */}
-            {/* onClick={() => navigate("/product-categories/toys")} */}
-          {/* > */}
-            {/* <div */}
-              {/* className="card-image" */}
-              {/* style={{ */}
-                {/* width: "40%", */}
-                {/* display: "flex", */}
-                {/* justifyContent: "center", */}
-                {/* alignItems: "center", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Img */}
-                {/* src={data[58].image} */}
-                {/* style={{ height: "80%", width: "75%" }} */}
-              {/* /> */}
-            {/* </div> */}
-            {/* <Card.Body */}
-              {/* style={{ */}
-                {/* display: "flex", */}
-                {/* flexDirection: "column", */}
-                {/* justifyContent: "start", */}
-                {/* alignItems: "start", */}
-                {/* width: "60%", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Title style={{ fontWeight: "600" }}>Toys</Card.Title> */}
-              {/* <Card.Text style={{ textAlign: "left", fontSize: "12px" }}> */}
-                {/* Toys for babies{" "} */}
-                {/* <span className="description-text"> */}
-                  {/* From interactive learning toys to cuddly companions, find the */}
-                  {/* perfect playmate for your child.{" "} */}
-                {/* </span> */}
-              {/* </Card.Text> */}
-            {/* </Card.Body> */}
-          {/* </Card> */}
-          {/* <Card */}
-            {/* style={{ */}
-              {/* height: "100%", */}
-              {/* display: "flex", */}
-              {/* flexDirection: "row", */}
-              {/* justifyContent: "flex-start", */}
-            {/* }} */}
-            {/* className="category-card" */}
-            {/* onClick={() => navigate("/product-categories/care")} */}
-          {/* > */}
-            {/* <div */}
-              {/* className="card-image" */}
-              {/* style={{ */}
-                {/* width: "40%", */}
-                {/* display: "flex", */}
-                {/* justifyContent: "center", */}
-                {/* alignItems: "center", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Img */}
-                {/* src={data[65].image} */}
-                {/* style={{ height: "80%", width: "75%" }} */}
-              {/* /> */}
-            {/* </div> */}
-            {/* <Card.Body */}
-              {/* style={{ */}
-                {/* display: "flex", */}
-                {/* flexDirection: "column", */}
-                {/* justifyContent: "start", */}
-                {/* alignItems: "start", */}
-                {/* width: "60%", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Title style={{ fontWeight: "600" }}>Care</Card.Title> */}
-              {/* <Card.Text style={{ textAlign: "left", fontSize: "12px" }}> */}
-                {/* Care products of premium brands{" "} */}
-                {/* <span className="description-text"> */}
-                  {/* Nurture your baby with love and care using our premium Care */}
-                  {/* Products. */}
-                {/* </span> */}
-              {/* </Card.Text> */}
-            {/* </Card.Body> */}
-          {/* </Card> */}
-          {/* <Card */}
-            {/* style={{ */}
-              {/* height: "100%", */}
-              {/* display: "flex", */}
-              {/* flexDirection: "row", */}
-              {/* justifyContent: "flex-start", */}
-            {/* }} */}
-            {/* className="category-card" */}
-            {/* onClick={() => navigate("/product-categories/nutrition")} */}
-          {/* > */}
-            {/* <div */}
-              {/* className="card-image" */}
-              {/* style={{ */}
-                {/* width: "40%", */}
-                {/* display: "flex", */}
-                {/* justifyContent: "center", */}
-                {/* alignItems: "center", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Img */}
-                {/* src={data[71].image} */}
-                {/* style={{ height: "80%", width: "75%" }} */}
-              {/* /> */}
-            {/* </div> */}
-            {/* <Card.Body */}
-              {/* style={{ */}
-                {/* display: "flex", */}
-                {/* flexDirection: "column", */}
-                {/* justifyContent: "start", */}
-                {/* alignItems: "start", */}
-                {/* width: "60%", */}
-              {/* }} */}
-            {/* > */}
-              {/* <Card.Title style={{ fontWeight: "600" }}>Nutrition</Card.Title> */}
-              {/* <Card.Text style={{ textAlign: "left", fontSize: "12px" }}> */}
-                {/* Nutritional food products{" "} */}
-                {/* <span className="description-text"> */}
-                  {/* Fuel your baby's growth with our nutritious Baby Food */}
-                  {/* collection at Cozycub.{" "} */}
-                {/* </span> */}
-              {/* </Card.Text> */}
-            {/* </Card.Body> */}
-          {/* </Card> */}
-        {/* </div> */}
+        <div className="card-container">
+          <Card
+            style={{
+              bottom: "0px",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+            }}
+            className="category-card "
+            onClick={() => navigate("/product-categories/clothes")}
+          >
+            <div
+              className="card-image"
+              style={{
+                width: "40%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Card.Img
+                src={data[39].image}
+                style={{ height: "80%", width: "75%" }}
+              />
+            </div>
+            <Card.Body
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "start",
+                width: "60%",
+              }}
+            >
+              <Card.Title style={{ fontWeight: "600" }}>Clothes</Card.Title>
+              <Card.Text style={{ textAlign: "left", fontSize: "12px" }}>
+                Clothes for infants{" "}
+                <span className="description-text">
+                  Cozycub where style meets comfort for your little one's
+                  everyday moments.
+                </span>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+            }}
+            className="category-card"
+            onClick={() => navigate("/product-categories/toys")}
+          >
+            <div
+              className="card-image"
+              style={{
+                width: "40%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Card.Img
+                src={data[58].image}
+                style={{ height: "80%", width: "75%" }}
+              />
+            </div>
+            <Card.Body
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "start",
+                width: "60%",
+              }}
+            >
+              <Card.Title style={{ fontWeight: "600" }}>Toys</Card.Title>
+              <Card.Text style={{ textAlign: "left", fontSize: "12px" }}>
+                Toys for babies{" "}
+                <span className="description-text">
+                  From interactive learning toys to cuddly companions, find the
+                  perfect playmate for your child.{" "}
+                </span>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+            }}
+            className="category-card"
+            onClick={() => navigate("/product-categories/care")}
+          >
+            <div
+              className="card-image"
+              style={{
+                width: "40%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Card.Img
+                src={data[65].image}
+                style={{ height: "80%", width: "75%" }}
+              />
+            </div>
+            <Card.Body
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "start",
+                width: "60%",
+              }}
+            >
+              <Card.Title style={{ fontWeight: "600" }}>Care</Card.Title>
+              <Card.Text style={{ textAlign: "left", fontSize: "12px" }}>
+                Care products of premium brands{" "}
+                <span className="description-text">
+                  Nurture your baby with love and care using our premium Care
+                  Products.
+                </span>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "flex-start",
+            }}
+            className="category-card"
+            onClick={() => navigate("/product-categories/nutrition")}
+          >
+            <div
+              className="card-image"
+              style={{
+                width: "40%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Card.Img
+                src={data[71].image}
+                style={{ height: "80%", width: "75%" }}
+              />
+            </div>
+            <Card.Body
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "start",
+                alignItems: "start",
+                width: "60%",
+              }}
+            >
+              <Card.Title style={{ fontWeight: "600" }}>Nutrition</Card.Title>
+              <Card.Text style={{ textAlign: "left", fontSize: "12px" }}>
+                Nutritional food products{" "}
+                <span className="description-text">
+                  Fuel your baby's growth with our nutritious Baby Food
+                  collection at Cozycub.{" "}
+                </span>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
 
       <div id="three-feature-container">

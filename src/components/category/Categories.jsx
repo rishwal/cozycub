@@ -1,17 +1,24 @@
-import React, { useContext, useState } from "react";
-import Card from "react-bootstrap/Card";
+import React, { useContext, useEffect, useState } from "react";
+import BootstrapCard from "react-bootstrap/Card";
 import { useNavigate, useParams } from "react-router-dom";
 import "./category.css";
+import AspectRatio from '@mui/joy/AspectRatio';
+import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import { dataContext } from "../Data/Data-object/Data";
 import { FaStar } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
-import Typography from "@mui/material/Typography";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
+import { Card, Typography, Skeleton, IconButton, CardContent, Stack, Pagination } from '@mui/material';
+import axios, { Axios } from "axios";
+import Cookies from "js-cookie";
+import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
+
 
 const Categories = () => {
   const navigate = useNavigate();
   const { data } = useContext(dataContext);
+
+  //State for storing paginated products
+  const [products, setproducts] = useState([]);
 
   const { type } = useParams();
   console.log(type);
@@ -20,6 +27,27 @@ const Categories = () => {
       return data;
     }
   });
+
+  const skeletonArray = Array.from({ length: 10 });
+
+  useEffect(() => {
+    const fetchProductByCategory = async () => {
+      try {
+        const res = await axios.get(`https://localhost:7293/api/Product/product-by-category-name?name=${type}`);
+        setproducts(res.data);
+        console.log(products);
+
+      }
+      catch (err) {
+        console.log("An error occured while fetching the product details", err);
+      }
+    }
+    fetchProductByCategory();
+    return () => {
+
+    };
+  }, []);
+
 
   //pagination state
   const [page, setpage] = useState(1);
@@ -57,13 +85,13 @@ const Categories = () => {
       </h1>
       <br />
       <div className="row " style={{ justifyContent: "start" }}>
-        {paginationArray.map((data) => (
+        {products.length != 0 ? products.map((data) => (
           <div
             className="col-12 col-md-6 col-xl-3 cards"
             key={data.id}
             onClick={() => navigate(`/product/${data.id}`, { replace: "true" })}
           >
-            <Card
+            <BootstrapCard
               style={{
                 display: "flex",
                 justifyContent: "center",
@@ -71,10 +99,10 @@ const Categories = () => {
               }}
               className="product-card"
             >
-              <Card.Img
-                src={data.image}
+              <BootstrapCard.Img
+                src={data.productImage}
                 position="top"
-                alt="Laptop"
+                alt={products.category}
                 style={{
                   width: "80%",
                   height: "52%",
@@ -82,7 +110,7 @@ const Categories = () => {
                   marginTop: "30px",
                 }}
               />
-              <Card.Body>
+              <BootstrapCard.Body>
                 <div className="d-flex justify-content-between">
                   <p className="small">
                     <a href="#!" className="text-muted">
@@ -95,20 +123,82 @@ const Categories = () => {
                 </div>
 
                 <div className="d-flex justify-content-between mb-3">
-                  <h5 className="mb-0">{data.name.slice(0, 16)}</h5>
-                  <h5 className="text-dark mb-0">₹{data.offerprice}</h5>
+                  <h5 className="mb-0">{data.productName.slice(0, 16)}</h5>
+                  <h5 className="text-dark mb-0">₹{data.offerPrice}</h5>
                 </div>
 
                 <div class="d-flex justify-content-between mb-2">
-                  <p class="text-muted mb-0">{data.description.slice(0, 8)}</p>
+                  <p class="text-muted mb-0">{data.productDescription.slice(0, 8)}</p>
                   <div class="ms-auto text-warning">
                     {printRating(data.rating)}
                   </div>
                 </div>
-              </Card.Body>
-            </Card>
+              </BootstrapCard.Body>
+            </BootstrapCard>
           </div>
-        ))}
+        ))
+          :
+
+          <>{
+            skeletonArray.map(skeleton => {
+
+            return  <Card variant="outlined" sx={{ width: 320,padding:3,margin:0.1 }}>
+                <div>
+                  <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
+                    <Skeleton>Product Name</Skeleton>
+                  </Typography>
+                  <Typography level="body-sm">
+                    <Skeleton>Category</Skeleton>
+                  </Typography>
+                  <IconButton
+                    aria-label="bookmark Bahamas Islands"
+                    variant="plain"
+                    color="neutral"
+                    size="sm"
+                    sx={{ position: 'absolute', top: '0.5rem', right: '0.5rem' }}
+                  >
+                    <BookmarkAdd />
+                    <Skeleton />
+                  </IconButton>
+                </div>
+                <AspectRatio minHeight="120px" maxHeight="200px">
+                  <Skeleton>
+                    <img
+                      src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286"
+                      srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"
+                      loading="lazy"
+                      alt=""
+                    />
+                  </Skeleton>
+                </AspectRatio>
+                <CardContent orientation="horizontal">
+                  <div>
+                    <Typography level="body-xs">
+                      <Skeleton>Product Name</Skeleton>
+                    </Typography>
+                    <Typography fontSize="lg" fontWeight="lg">
+                      <Skeleton>Price</Skeleton>
+                    </Typography>
+                  </div>
+
+                </CardContent>
+              </Card>
+
+            })
+
+
+
+          }</>
+
+
+
+
+        }
+
+
+
+
+
       </div>
 
       <Stack spacing={2} style={{ marginTop: "50px" }}>
@@ -118,7 +208,7 @@ const Categories = () => {
           onChange={(event, value) => setpage(value)}
         />
       </Stack>
-    </div>
+    </div >
   );
 };
 

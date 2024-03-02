@@ -1,54 +1,122 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Cart.css";
 import { dataContext } from "../Data/Data-object/Data";
 import { useNavigate } from "react-router-dom";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 const Cart = () => {
   const navigate = useNavigate();
 
-  const { cart, setCart, signedin } = useContext(dataContext);
-  const sum = cart.reduce((prev, item) => {
-    return item.offerprice * item.qty + prev;
-  }, 0);
-  const sumBefore = cart.reduce((prev, item) => {
-    return item.price * item.qty + prev;
-  }, 0);
 
-  const [totalBefore, settotalBefore] = useState(sumBefore);
-  const [total, setTotal] = useState(sum);
+  const [actualTotal, setActualtotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
-  const incrementQty = (item) => {
-    if (item.qty < 10) {
-      item.qty = item.qty + 1;
-      setCart([...cart]);
-      const sum = cart.reduce((prev, item) => {
-        return item.offerprice * item.qty + prev;
-      }, 0);
-      const sumBefore = cart.reduce((prev, item) => {
-        return item.price * item.qty + prev;
-      }, 0);
-      settotalBefore(sumBefore);
-      setTotal(sum);
+  //State for storing cart items
+  const [cart, setCart] = useState([]);
+
+  useEffect(() => {
+    const fetchCart = async () => {
+      const authToken = Cookies.get('token');
+      const res = await axios.get("https://localhost:7293/api/Cart/GetCartItems", {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        },
+      })
+      console.log(res.data);
+
+      setCart(res.data);
+      const actualTotal = res.data.reduce((prev, curr) => prev + curr.price, 0);
+      setActualtotal(actualTotal);
+      console.log(actualTotal);
+
+
+    }
+
+    fetchCart();
+
+  }, []);
+
+
+  //Fundtions for incrementing 
+
+  const handleIncrement = async (productId) => {
+    try {
+      const authToken = Cookies.get('token');
+      const res = await axios.get(`https://localhost:7293/api/Cart/increment-quantity?productId=${productId}`, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        },
+      });
+      setCart(res.data);
+
+
+    } catch (error) {
+      console.error('Error incrementing quantity:', error);
     }
   };
-  const decrementQty = (item) => {
-    if (item.qty > 1) {
-      item.qty = item.qty - 1;
-      const sum = cart.reduce((prev, item) => {
-        return item.offerprice * item.qty + prev;
-      }, 0);
-      setTotal(sum);
-      const sumBefore = cart.reduce((prev, item) => {
-        return item.price * item.qty + prev;
-      }, 0);
-      settotalBefore(sumBefore);
+
+  const handleDecrement = async (productId) => {
+
+  };
+
+
+  const removeFromCart = async (productId) => {
+   
+    try {
+
+      const authToken = Cookies.get('token');
+      const res = await axios.delete(`https://localhost:7293/api/Cart/remove-item-from-cart?productId=${productId}`, {
+        headers: {
+          'Authorization': `Bearer ${authToken}`
+        },
+      });
+      setCart(res.data);
+      console.log(cart);
+
+    } catch (error) {
+      console.error('Error removing item from cart:', error);
     }
   };
-  const removeFromCart = (index) => {
-    cart.splice(index, 1);
-    setCart([...cart]);
-  };
+
+
+
+  console.log(cart.length);
+
+  const { signedin } = useContext(dataContext);
+
+  // const incrementQty = (item) => {
+  //   if (item.qty < 10) {
+  //     item.qty = item.qty + 1;
+  //     setCart([...cart]);
+  //     const sum = cart.reduce((prev, item) => {
+  //       return item.offerprice * item.qty + prev;
+  //     }, 0);
+  //     const sumBefore = cart.reduce((prev, item) => {
+  //       return item.price * item.qty + prev;
+  //     }, 0);
+  //     settotalBefore(sumBefore);
+  //     setTotal(sum);
+  //   }
+  // };
+  // const decrementQty = (item) => {
+  //   if (item.qty > 1) {
+  //     item.qty = item.qty - 1;
+  //     const sum = cart.reduce((prev, item) => {
+  //       return item.offerprice * item.qty + prev;
+  //     }, 0);
+  //     setTotal(sum);
+  //     const sumBefore = cart.reduce((prev, item) => {
+  //       return item.price * item.qty + prev;
+  //     }, 0);
+  //     settotalBefore(sumBefore);
+  //   }
+  // };
+  // const removeFromCart = (index) => {
+  //   cart.splice(index, 1);
+  //   setCart([...cart]);
+  // };
 
   return (
     <div className="container-fluid cart-container">
@@ -56,18 +124,18 @@ const Cart = () => {
       <div className="row">
         <div className="col-lg-8 columns">
           {signedin ? (
-            cart.length >= 1 ? (
+            cart.length > 0 ? (
               cart.map((item, index) => (
                 <div className="row items">
                   <div
                     className="col-12 col-md-3 image-container"
                     style={{ height: "100%" }}
                   >
-                    <img src={item.image} alt="" />
+                    <img src={item.image} />
                     <div className="description-container">
-                      <h3>{item.name}</h3>
+                      <h3>{item.productName}</h3>
                       <p>
-                        ₹{item.offerprice}{" "}
+                        ₹{item.offerPrice}{" "}
                         <span
                           style={{
                             textDecoration: "line-through",
@@ -77,14 +145,14 @@ const Cart = () => {
                           {item.price}
                         </span>
                       </p>
-                      <p>{item.description.slice(0, 10)}</p>
+                      <p>{item.description?.slice(0, 10)}</p>
                     </div>
                   </div>
                   <div className="col-12 col-md-9 button-container">
                     <div className="detail-container">
-                      <h3>{item.name}</h3>
+                      <h3>{item.productName}</h3>
                       <h5>
-                        ${item.offerprice} <span>{item.price}</span>
+                        ${item.offerPrice} <span>{item.price}</span>
                       </h5>
                       <p>{item.description}</p>
                     </div>
@@ -92,7 +160,7 @@ const Cart = () => {
                       <span>
                         {" "}
                         <button
-                          onClick={() => decrementQty(item)}
+                          onClick={() => handleDecrement(item.id)}
                           className="decrementBtn"
                         >
                           -
@@ -100,10 +168,10 @@ const Cart = () => {
                         <input
                           type="text"
                           style={{ width: "40px", textAlign: "center" }}
-                          value={item.qty}
+                          value={item.quantity}
                         />
                         <button
-                          onClick={() => incrementQty(item)}
+                          onClick={() => handleIncrement(item.id)}
                           className="incrementBtn"
                         >
                           +
@@ -111,7 +179,7 @@ const Cart = () => {
                       </span>
                       <MdOutlineRemoveShoppingCart
                         size={25}
-                        onClick={() => removeFromCart(index)}
+                        onClick={() => removeFromCart(item.id)}
                         style={{ cursor: "pointer" }}
                       />
 
@@ -145,7 +213,7 @@ const Cart = () => {
                   <div>
                     <span>
                       <h4>Actual Price</h4>
-                      <h4>{totalBefore}</h4>
+                      <h4>{actualTotal}</h4>
                     </span>
                     <span>
                       <h4>Discount Price</h4>
@@ -153,12 +221,12 @@ const Cart = () => {
                     </span>
                     <span>
                       <h4>Savings </h4>
-                      <h4>{totalBefore - total}</h4>
+                      <h4>{cart[0].totalPrice - total}</h4>
                     </span>
                   </div>
                   <span>
                     <h3>Total</h3>
-                    <h3>{total}</h3>
+                    <h3>{cart[0].totalPrice}</h3>
                   </span>
                 </div>
               </div>

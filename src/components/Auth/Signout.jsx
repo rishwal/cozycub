@@ -1,12 +1,25 @@
 import React, { useContext } from 'react';
 import Data, { dataContext } from '../Data/Data-object/Data';
 import Button from 'react-bootstrap/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import Cookies from 'js-cookie';
+import { jwtDecode } from 'jwt-decode';
+
 
 
 const Signout = () => {
-    const { cart, setCart, productsPurchased, setproductsPurchased, setsignedin, currentuser, setcurrentuser, setusers, users, adminsignedin ,setadminsignedin} = useContext(dataContext);
+    const { cart, setCart, productsPurchased, setproductsPurchased, setsignedin, currentuser, setcurrentuser, setusers, users, adminsignedin, setadminsignedin } = useContext(dataContext);
+
+    //Getting token from cookies
+    const token = Cookies.get('token');
+
+    //Decoding the token 
+    const decodedToken = jwtDecode(token);
+   
+
+
+
+
+    console.log(token);
 
     const handlesignout = () => {
 
@@ -33,11 +46,9 @@ const Signout = () => {
             {adminsignedin ? <h1>Admin info</h1> : <h1>User info</h1>}
             <div className='form-inputs' style={{ display: 'flex', justifyContent: "space-between", flexDirection: "column", alignItems: 'flex-start' }}>
                 <label htmlFor="username">username</label>
-                <input type="text" id='username' value={`${currentuser.name}`}  disabled />
+                <input type="text" id='username' value={`${Object.values(decodedToken)[1]}`} disabled />
                 <label htmlFor="username">email</label>
-                <input type="email" id='email' value={`${currentuser.email}`} disabled />
-                <label htmlFor="username">password</label>
-                <input type="password" id='password' value={`${currentuser.password}`} disabled />
+                <input type="email" id='email' value={`${Object.values(decodedToken)[3]}`} disabled />
 
             </div>
 

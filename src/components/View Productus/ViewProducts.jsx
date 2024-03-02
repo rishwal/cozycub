@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import "./viewproducts.css";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { dataContext } from "../Data/Data-object/Data";
 import { FaStar } from "react-icons/fa";
@@ -11,6 +12,8 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { IoMdLogIn } from "react-icons/io";
 import { TbShoppingCartShare } from "react-icons/tb";
+import axios, { Axios } from "axios";
+import Cookies from "js-cookie";
 
 
 const ViewProductus = () => {
@@ -18,6 +21,9 @@ const ViewProductus = () => {
   //state for heart icon
   const [heartIcon, setheartIcon] = useState({ display: "unset" });
   const [heartIconFill, setheartIconFill] = useState({ display: "none" });
+
+  //state for storing the product
+  const [product, setproduct] = useState([]);
 
   const navigate = useNavigate();
 
@@ -30,22 +36,27 @@ const ViewProductus = () => {
     }
   });
 
-  const addToCart = (dataNow) => {
-    if (signedin) {
-      if (cart.includes(dataNow)) {
-        const item = cart.find((val) => val == dataNow);
-        item.qty++;
-        toast((t) => (
-          <span>
-            Item count increased <b>+1</b>
-            <button onClick={() =>navigate('/cart')} style={{border:'none',backgroundColor:'transparent',fontSize:'20px'}}><TbShoppingCartShare /></button>
-          </span>
-        ));
-      } else {
-        setCart([...cart, dataNow]);
-        toast.success("Item added to Cart !");
-      }
-    } else {
+
+  //Fetch the Product 
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const res = await axios.get(`https://localhost:7293/api/Product/${id}`);
+      setproduct(res.data);
+
+      console.log(res);
+
+    }
+    fetchProduct();
+  }, []);
+
+
+  //Add to cart
+
+
+
+  const addToCart = async () => {
+    if (!product.id) return;
+    if (!signedin) {
       toast.error(() => (
         <span>
           <b> Please Login </b>
@@ -57,8 +68,57 @@ const ViewProductus = () => {
           </button>
         </span>
       ));
+
+    }
+    try {
+      const authToken = Cookies.get('token');
+      console.log(product.id);
+      const response = await axios.post(`https://localhost:7293/api/Cart/add-to-cart?productId=${product.id}`,{},
+        {
+          headers: {
+            'Authorization': `Bearer ${authToken}`
+          },
+        }
+      )
+      if (response.status === 200) {
+        toast.success("Item added to Cart !");
+
+      }
+    } catch (error) {
+      toast.error("Failed to add item to Cart !");
     }
   };
+
+
+  // const addToCart = (dataNow) => {
+  //   if (signedin) {
+  //     if (cart.includes(dataNow)) {
+  //       const item = cart.find((val) => val == dataNow);
+  //       item.qty++;
+  //       toast((t) => (
+  //         <span>
+  //           Item count increased <b>+1</b>
+  //           <button onClick={() => navigate('/cart')} style={{ border: 'none', backgroundColor: 'transparent', fontSize: '20px' }}><TbShoppingCartShare /></button>
+  //         </span>
+  //       ));
+  //     } else {
+  //       setCart([...cart, dataNow]);
+  //       toast.success("Item added to Cart !");
+  //     }
+  //   } else {
+  //     toast.error(() => (
+  //       <span>
+  //         <b> Please Login </b>
+  //         <button
+  //           onClick={() => navigate("/login")}
+  //           style={{ backgroundColor: "transparent", border: "none" }}
+  //         >
+  //           <IoMdLogIn />
+  //         </button>
+  //       </span>
+  //     ));
+  //   }
+  // };
 
   const buyNow = (dataNow) => {
     if (signedin) {
@@ -115,7 +175,7 @@ const ViewProductus = () => {
             <Card className="card d-flex" style={{ alignItems: "center" }}>
               <Card.Img
                 variant="top"
-                src={dataNow.image}
+                src={product.productImage}
                 className="card-image"
               />
               <Card.Body style={{ display: "flex" }} id="product-card-body">
@@ -152,15 +212,15 @@ const ViewProductus = () => {
               style={heartIconFill}
             />
             <div className="text-column-container">
-              <h2>{dataNow.name}</h2>
+              <h2>{product.productName}</h2>
 
               {printRating(dataNow.rating)}
               <h2 className="price">
-                ₹{dataNow.offerprice}
-                <span style={{ marginLeft: "10px" }}>₹{dataNow.price}</span>
+                ₹{product.offerPrice}
+                <span style={{ marginLeft: "10px" }}>₹{product.price}</span>
               </h2>
 
-              <h3>{dataNow.description}</h3>
+              <h3>{product.productDescription}</h3>
 
               <span>
                 <p>
